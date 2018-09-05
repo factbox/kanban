@@ -1,0 +1,3 @@
+module UserStories
+  # Your code goes here...
+end
