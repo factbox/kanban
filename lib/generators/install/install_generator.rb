@@ -21,6 +21,10 @@ class InstallGenerator < Rails::Generators::NamedBase
     end
   end
 
+  def create_views
+    directory "views/stories", "app/views/stories"
+  end
+
   private
 
     def get_dir_path(folder)
