@@ -25,6 +25,10 @@ class InstallGenerator < Rails::Generators::NamedBase
     directory "views/stories", "app/views/stories"
   end
 
+  def create_routes
+    route "resources :stories, controller: 'artifacts'"
+  end
+
   private
 
     def get_dir_path(folder)
