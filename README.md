@@ -14,6 +14,12 @@ Add this line to your factbox's Gemfile:
 gem "PLUGIN_NAME", git: "PLUGIN_GIT_URL"
 ```
 
+If you want use locally:
+
+```ruby
+gem 'user_stories', path: '/home/pwener/Workspace/user_stories'
+```
+
 So, in factbox root you can:
 
 ```bash
