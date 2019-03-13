@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class UserStories::Test < ActiveSupport::TestCase
+class Kanban::Test < ActiveSupport::TestCase
   test "truth" do
-    assert_kind_of Module, UserStories
+    assert_kind_of Module, Kanban
   end
 end

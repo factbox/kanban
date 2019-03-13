@@ -1,4 +1,4 @@
-# UserStories
+# Kanban
 
 This is a boilerplate to create new plugins.
 FactBox basically is extended by new Artifact models. To keep one modular ecosystem, it's recomended insert those artifacts via plugin.
@@ -17,7 +17,7 @@ gem "PLUGIN_NAME", git: "PLUGIN_GIT_URL"
 If you want use locally:
 
 ```ruby
-gem 'user_stories', path: '/home/pwener/Workspace/user_stories'
+gem 'kanban', path: '/home/pwener/Workspace/kanban'
 ```
 
 So, in factbox root you can:

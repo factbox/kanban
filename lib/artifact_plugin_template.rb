@@ -1,3 +1,3 @@
-module UserStories
+module Kanban
   # Your code goes here...
 end

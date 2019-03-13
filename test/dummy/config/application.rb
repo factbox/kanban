@@ -3,7 +3,7 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "user_stories"
+require "kanban"
 
 module Dummy
   class Application < Rails::Application

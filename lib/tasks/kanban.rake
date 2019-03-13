@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :user_stories do
+# task :kanban do
 #   # Task goes here
 # end
