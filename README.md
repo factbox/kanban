@@ -1,29 +1,24 @@
 # Kanban
 
-This is a boilerplate to create new plugins.
-FactBox basically is extended by new Artifact models. To keep one modular ecosystem, it's recomended insert those artifacts via plugin.
-
-# Usage
-
-TODO
+That is a plugin to work with user stories in factbox.
 
 ## Installation
 Add this line to your factbox's Gemfile:
 
 ```ruby
-gem "PLUGIN_NAME", git: "PLUGIN_GIT_URL"
+gem "kanban", git: "https://github.com/factbox/kanban"
 ```
 
 If you want use locally:
 
 ```ruby
-gem 'kanban', path: '/home/pwener/Workspace/kanban'
+gem 'kanban', path: 'path_to_dir/kanban'
 ```
 
 So, in factbox root you can:
 
 ```bash
-$ rails g install PLUGIN_NAME
+$ rails g install kanban
 ```
 
 This will create some migrations, so you should run:
