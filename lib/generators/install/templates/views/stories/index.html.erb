@@ -1,46 +1,71 @@
 <div class="container-fluid pt-3">
-  <h3><%= @project.name %> Kanban</h3>
+  <h3><%= @project.name %> <small>Kanban</small></h3>
   <div class="row flex-row flex-sm-nowrap py-5">
+    <div class="col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-truncate py-2">To Do</h4>
+          <% if @artifacts.select{ |a| a.todo? }.empty? %>
+            <h5 class="text-secondary">Empty</h5>
+          <% end %>
 
-        <% @artifacts.each do |story| %>
-          <div class="col-sm-4 col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title text-truncate py-2">To Do</h4>
-                <div class="card p-2 bg-faded">
-                  <h5 class="card-title"><%= story.title %></h5>
-                  <p><%= story.story %></p>
-                </div>
+          <% @artifacts.each do |story| %>
+            <% if story.todo? %>
+              <div class="card p-2 bg-faded">
+                <h5 class="card-title"><%= story.title %></h5>
+                <p><%= story.story %></p>
               </div>
-            </div>
-          </div>
+              <br/>
+            <% end %>
+          <% end %>
 
-          <div class="col-sm-4 col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title text-truncate py-2">Doing</h4>
-                <div class="card p-2 bg-faded">
-                  <h5 class="card-title"><%= story.title %></h5>
-                  <p><%= story.story %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4 col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title text-truncate py-2">Done</h4>
-                <div class="card p-2 bg-faded">
-                  <h5 class="card-title"><%= story.title %></h5>
-                  <p><%= story.story %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-
+        </div>
       </div>
     </div>
+
+    <div class="col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-truncate py-2">Doing</h4>
+          <% if @artifacts.select{ |a| a.doing? }.empty? %>
+            <h5 class="text-secondary">Empty</h5>
+          <% end %>
+
+          <% @artifacts.each do |story| %>
+            <% if story.doing? %>
+              <div class="card p-2 bg-faded">
+                <h5 class="card-title"><%= story.title %></h5>
+                <p><%= story.story %></p>
+              </div>
+              <br/>
+            <% end %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-truncate py-2">Done</h4>
+          <% if @artifacts.select{ |a| a.done? }.empty? %>
+            <h5 class="text-secondary">Empty</h5>
+          <% end %>
+
+          <% @artifacts.each do |story| %>
+            <% if story.done? %>
+              <div class="card p-2 bg-faded">
+                <h5 class="card-title"><%= story.title %></h5>
+                <p><%= story.story %></p>
+              </div>
+              <br/>
+            <% end %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
