@@ -18,6 +18,7 @@ gem 'kanban', path: 'path_to_dir/kanban'
 So, in factbox root you can:
 
 ```bash
+$ bundle install
 $ rails g install kanban
 ```
 
