@@ -23,7 +23,7 @@ class InstallGenerator < Rails::Generators::NamedBase
   end
 
   def create_components
-    get_dir_path('javascript').sort.each do |filepath|
+    get_dir_path('javascript/components').sort.each do |filepath|
       name = File.basename(filepath)
       copy_file "javascript/components/#{name}",
                 "app/javascript/components/#{name}"
@@ -49,6 +49,6 @@ class InstallGenerator < Rails::Generators::NamedBase
   private
 
   def get_dir_path(folder)
-    Dir["#{self.class.source_root}/#{folder}/*.rb"]
+    Dir["#{self.class.source_root}/#{folder}/*"]
   end
 end

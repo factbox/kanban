@@ -1,11 +1,11 @@
 # API controller for Layers, used in Kanban
 class LayersController < ActionController::API
-  before_action :set_story, only: [:move_story]
+  before_action :set_story, only: [:move]
 
   # GET /kanban/:id/move/:layer
   # Move specific artifact to layer
   def move
-    if @story.update(layer: params[:destiny])
+    if @story.update(layer: params[:layer])
       render status: 200, json: { message: 'Story moved!' }.to_json
     else
       # TODO: show @story errors
