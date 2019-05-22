@@ -1,9 +1,8 @@
 # Simple functional artifact.
 class Story < ApplicationRecord
-  acts_as :artifact
-  enum layer: [:todo, :doing, :done]
-
+  acts_as   :artifact
   validates :story, presence: false
+  has_many  :criterias
 
   def self.plugin_name
     'Kanban'

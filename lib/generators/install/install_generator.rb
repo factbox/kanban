@@ -9,9 +9,13 @@ class InstallGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
 
   def create_migrations
-    get_dir_path('migrations').sort.each do |filepath|
-      name = File.basename(filepath)
-      migration_template "migrations/#{name}", "db/migrate/#{name}", skip: true
+    migration_order = [
+      'create_layers',
+      'create_stories',
+      'create_criteria'
+    ]
+    migration_order.each do |filename|
+      generate_migration filename
     end
   end
 
@@ -50,5 +54,10 @@ class InstallGenerator < Rails::Generators::NamedBase
 
   def get_dir_path(folder)
     Dir["#{self.class.source_root}/#{folder}/*"]
+  end
+
+  def generate_migration(filepath)
+    name = File.basename("migrations/#{filepath}.rb")
+    migration_template "migrations/#{name}", "db/migrate/#{name}", skip: true
   end
 end
